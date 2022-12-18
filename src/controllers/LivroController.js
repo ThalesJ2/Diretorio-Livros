@@ -61,10 +61,11 @@ class LivroController {
         else{
             
             let resultBook = await Livro.findByID(id);
-            if(resultBook.status)
+           
+            if(resultBook.result.length > 0 )
                 return res.json(resultBook.result);
             else
-                return res.json(resultBook.err);
+                return res.sendStatus(400);
         }
 
     }
@@ -86,6 +87,67 @@ class LivroController {
         }
         else
           return res.sendStatus(400);
+
+    }
+
+    async update(req,res){
+
+        let {id,nome,autor,genero,image,editora,lancamento} = req.body;
+
+        let ano = new Date().getFullYear();
+        
+        if(id== undefined || id <= 0)
+            return res.sendStatus(400);
+        else
+        if(nome == undefined || nome == '')
+            return res.sendStatus(400);
+        else
+        if(autor == undefined || autor == '')
+            return res.sendStatus(400);
+        else
+        if(genero == undefined || genero == '')
+            return res.sendStatus(400);
+        else
+        if(image == undefined || image == '')
+            return res.sendStatus(400);
+        else
+        if(editora == undefined || editora == '')
+            return res.sendStatus(400);
+        else
+        if(lancamento <= 1800 || lancamento > ano || lancamento == undefined)
+            return res.sendStatus(400);
+
+
+            let ExistsName = await Livro.findName(nome);
+
+            if(ExistsName.result.length == 0)
+            {
+                let result =  await Livro.update(id,nome,autor,genero,image,editora,lancamento);
+                if(result.status)
+                    return res.json({nome,autor,genero,image,editora});
+                else
+                    return res.sendStatus(400);
+            }
+            else    
+                return  res.sendStatus(400);
+    
+    }
+
+    async findBook(req,res){
+
+        let{nome} = req.params;
+        if(nome!=undefined){
+            
+         let resultQuery = await  Livro.filter(nome);
+
+         if(resultQuery.result != undefined)
+            return res.json(resultQuery.result);
+        else
+            return res.sendStatus(400);
+
+        }
+        else
+            return res.sendStatus(400);
 
     }
 
