@@ -1,4 +1,5 @@
 require("dotenv").config();
+console.log(process.env.DB_PORT);
 const knex = require('knex')({
     client: 'mysql2',
     connection: {
