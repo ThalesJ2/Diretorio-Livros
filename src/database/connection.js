@@ -1,5 +1,5 @@
 const path = require("path");
-require("dotenv").config({path: 'C:\\Users\\thale\\Desktop\\Diretorio-Livro\\.env'});
+require("dotenv").config();
 const knex = require('knex')({
     client: 'mysql2',
     connection: {
