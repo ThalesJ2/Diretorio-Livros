@@ -1,4 +1,4 @@
-const {Router, application} = require("express");
+const {Router} = require("express");
 const router = Router();
 const LivroController = require("../controllers/LivroController");
 

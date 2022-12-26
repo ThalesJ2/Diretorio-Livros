@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const bodyparser = require("body-parser");
-const routes = require("./routes/routes");
-const log = require("./Logs/log");
+const routes = require("./src/routes/routes");
+const log = require("./src/Logs/log");
 
 app.use(log);
 
