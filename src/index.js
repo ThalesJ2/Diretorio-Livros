@@ -14,5 +14,5 @@ app.use(routes);
 
 
 app.listen(7070,()=>{
-    console.log("App rodando");
+    console.log("rodando api!");
 });
