@@ -1,0 +1,17 @@
+{
+    "name": "diretorio-livros",
+    "version":2,
+    "public":true,
+    "build":{
+        "src":"src/index.js",
+        "use":"@vercel/node"
+    },
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"src/index.js"
+        }
+    ]
+
+    
+}
