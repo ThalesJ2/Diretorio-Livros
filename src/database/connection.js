@@ -12,4 +12,11 @@ const knex = require('knex')({
     }
   });
 
+
+knex.raw("select 1").then(()=>{
+    console.log("Conected");
+}).catch((err)=>{
+  console.log(err);
+})
+
 module.exports = knex;
