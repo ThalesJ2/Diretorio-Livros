@@ -11,8 +11,6 @@ app.use(bodyparser.json());
 app.use(routes);
 
 
-
-
 app.listen(7070,()=>{
     console.log("rodando api!");
 });

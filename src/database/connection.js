@@ -1,6 +1,5 @@
 const path = require("path");
 require("dotenv").config();
-console.log(process.env.DB_NAME);
 const knex = require('knex')({
     client: 'mysql2',
     connection: {
