@@ -10,6 +10,6 @@ app.use(bodyparser.json());
 app.use(routes);
 
 
-app.listen(7070,()=>{
+app.listen(4545,()=>{
     console.log("rodando api!");
 });
