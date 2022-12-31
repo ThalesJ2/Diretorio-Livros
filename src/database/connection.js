@@ -14,7 +14,7 @@ const knex = require('knex')({
 
 
 knex.raw("select 1").then(()=>{
-    console.log("Conectado");
+    console.log("Conectado!");
 }).catch((err)=>{
   console.log(err);
 })
