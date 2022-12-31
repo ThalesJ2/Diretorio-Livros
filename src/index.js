@@ -11,5 +11,5 @@ app.use(routes);
 
 
 app.listen(4545,()=>{
-    console.log("rodando api!");
+    console.log("rodando!");
 });
